@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link href="../img/icono.jpg" rel="icon">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AJAX</title>
+
+  <!-- Custom Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,300,700' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap CSS Style -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+  <!-- Template CSS Style -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Animate CSS  -->
+  <link rel="stylesheet" href="../css/animate.css">
+
+  <!-- FontAwesome 4.3.0 Icons  -->
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+  <!-- BXslider CSS  -->
+  <link rel="stylesheet" href="css/bxslider/jquery.bxslider.css">
+
+  <!-- Magnific-Popup CSS Style -->
+  <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css">
+
+  <!-- script ================================================== -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+ 
+  <script>
+  function realizaProceso(valorCaja1, valorCaja2){
+          var parametros = {
+                  "valorCaja1" : valorCaja1,
+                  "valorCaja2" : valorCaja2
+          };
+          $.ajax({
+                  data:  parametros,
+                  url:   'ejemplo_ajax_proceso.php',
+                  type:  'post',
+                  beforeSend: function () {
+                          $("#resultado").html("Procesando, espere por favor...");
+                  },
+                  success:  function (response) {
+                          $("#resultado").html(response);
+                  }
+          });
+  }
+  </script>
+  <!-- End script ================================================== -->
+  
+</head>
+<body>
+
+  <!-- Preload the Whole Page -->
+  <div id="preloader">      
+    <div id="loading-animation">&nbsp;</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <a class="navbar-brand" href="../../index.html"><img class="logo" src="../img/logo.png" alt=""></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigation-nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-link scrollto active" href="../../index.html">Home</a></li>
+            <li class="active"><a class="section-scroll" href="#wrapper">Inicio</a></li>
+            <li><a href="#Aprendizaje">¿Qué es AJAX?</a></li>
+            <li><a href="#Ejemplo">Ejemplo</a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+  </header>
+  <!-- End Navbar -->
+
+  <div id="wrapper">
+
+  <!-- Hero ================================================== -->
+    <section>
+      <div id="hero-section" class="landing-hero" data-stellar-background-ratio="0">
+        <div class="hero-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12" style="text-align: center;">
+                <h1>AJAX</h1>
+                <div class="div-line"></div>
+                <p class="hero">AJAX puede:<br>
+                  Leer datos de un servidor web, después de que se haya cargado la página.<br>
+                  Actualizar una página web sin recargar la página.<br>
+                  Enviar datos a un servidor web - en segundo plano.<br></p>
+              </div> <!-- end col-md-6 -->
+            </div> <!-- end row -->
+          </div> <!-- End container -->
+        </div> <!-- End hero-content -->
+      </div> <!-- End hero-section -->
+    </section>
+    <!-- End hero section -->
+
+    <!-- Offer ================================================== -->
+    <section>
+      <div id="Aprendizaje" class="pad-sec">
+        <div class="container">
+          <div class="title-section big-title-sec animated out" data-animation="fadeInUp" data-delay="0">
+            <div class="row">
+              <div class="col-sm-12" style="text-align: left;">
+                <center><h1>¿Qué es AJAX?</h1></center>
+                <div class="col-lg-12" style="border-style: solid;margin-left: 10px; color: black;" data-aos="fade-up" data-aos-delay="100" align="left">
+                  <p>Ajax (Asynchronous JavaScript and XML) se refiere a un grupo de tecnologías que se utilizan para desarrollar aplicaciones web. Al combinar estas tecnologías, las páginas web parece que son más receptivas puesto que los paquetes pequeños de datos se intercambian con el servidor y las páginas web no se vuelven a cargar cada vez que un usuario realiza un cambio de entrada. Ajax permite que un usuario de la aplicación web interactúe con una página web sin la interrupción que implica volver a cargar la página web. La interacción del sitio web ocurre rápidamente sólo con partes de la página de recarga y renovación.<br>
+                  Ajax se compone de las siguientes tecnologías:<br>
+                  XHTML y CSS para presentar información.<br>
+                  DOM (Document Object Model - modelo de objetos de documento) para visualizar e interactuar de forma dinámica la información presentada.<br>
+                  El objeto XMLHttpRequest para manipular los datos de forma asíncrona con el servidor web.<br>
+                  XML, HTML y XSLT para el intercambio y la manipulación de datos.<br>
+                  Se visualiza JavaScript para enlazar solicitudes e información de datos.<br>
+                  Ajax incorpora estas tecnologías para crear un nuevo enfoque al desarrollo de aplicaciones web.<br>
+                  Ajax define un método de iniciar un cliente con la comunicación del servidor sin recargas de páginas. Proporciona una forma de permitir actualizaciones de página parciales. Desde una perspectiva de usuario de página web, significa que la mejora de la interacción con una aplicación web, que proporciona al usuario más control de su entorno, es similar a la de una aplicación de escritorio.<br>
+                  En una aplicación web tradicional, las solicitudes HTTP, que se inician mediante la interacción del usuario con la interfaz web, se realizan a un servidor web. El servidor web procesa la solicitud y devuelve una página HTML al cliente. Durante el transporte HTTP, el usuario no puede interactuar con la aplicación web.<br></p>
+                </div> <!-- End row -->
+              </div> <!-- end title-section -->
+            </div> <!-- End offer-boxes -->
+          </div> <!-- End container -->
+        </div> <!-- End landing-offer-section -->
+      </div>
+    </section>
+    <!-- End offer section -->
+    <section>
+      <div class="sep-section"></div>
+    </section>
+
+
+    <!-- Offer   ================================================== -->
+    <section>
+      <div id="Ejemplo" class="pad-sec">
+        <div class="container">
+          <div class="title-section big-title-sec animated out" data-animation="fadeInUp" data-delay="0">
+            <div class="row">
+              <div class="col-sm-12" style="text-align: left;">
+                <center><h1 >AJAX Ejemplo:</h1></center>
+                  <h2>Codificación:</h2>
+                  
+                  <div class="col-lg-12" style="border-style: solid;margin-left: 10px;" data-aos="fade-up" data-aos-delay="100" align="left">
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;<br>
+                    &lt;script type="text/javascript" src="/js/jquery.js"&gt;&lt;/script&gt;<br>
+                     
+                    &lt;script&gt;<br>
+                    function realizaProceso(valorCaja1, valorCaja2){<br>
+                            var parametros = {<br>
+                                    "valorCaja1" : valorCaja1,<br>
+                                    "valorCaja2" : valorCaja2<br>
+                            };<br>
+                            $.ajax({<br>
+                                    data:  parametros,<br>
+                                    url:   'ejemplo_ajax_proceso.php',<br>
+                                    type:  'post',<br>
+                                    beforeSend: function () {<br>
+                                            $("#resultado").html("Procesando, espere por favor...");<br>
+                                    },<br>
+                                    success:  function (response) {<br>
+                                            $("#resultado").html(response);<br>
+                                    }<br>
+                            });<br>
+                    }<br>
+                    &lt;/script&gt;<br>
+                     
+                    &lt;/head&gt;<br>
+                     
+                    &lt;body&gt;<br>
+   
+                    Introduce valor 1 &lt;input type="text" name="caja_texto" id="valor1" value="0"/&gt;<br> 
+                    Introduce valor 2 &lt;input type="text" name="caja_texto" id="valor2" value="0"/&gt;<br>
+                    Realiza suma &lt;input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/&gt;<br><br/>
+                    Resultado: &lt;span id="resultado"&gt;0&lt;/span&gt;<br>
+   
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;<br>
+                    <br>
+
+                    <h2>Ejecución:</h2>
+
+                    <div class="col-lg-8" style="border-style: solid;margin-left: 10px;" data-aos="fade-up" data-aos-delay="100" align="left">
+                      <div id="demo">
+                        <h3>Introduce valor 1: </h3> <input type="text" name="caja_texto" id="valor1" value="0"/> 
+                        <h3>Introduce valor 2: </h3> <input type="text" name="caja_texto" id="valor2" value="0"/><br/>
+                        <h3>Realiza suma</h3> <input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/><br/>
+                        Resultado: <span id="resultado">0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- End row -->
+            </div> <!-- end title-section -->
+          </div> <!-- End offer-boxes -->
+        </div> <!-- End container -->
+      </div> <!-- End landing-offer-section -->
+    </section>
+    <!-- End offer section -->
+    <section>
+      <div class="sep-section"></div>
+    </section>
+
+   
+    <!-- Footer ================================================== -->
+    <footer>
+      <div id="footer-section" class="text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <ul class="footer-social-links">
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://web.whatsapp.com">Whatsapp</a></li>
+                <li><a href="https://www.youtube.com/watch?v=d_J2nC6V6NA&t=23s">Youtube</a></li>
+                <li><a href="https://mail.google.com/">Gmail</a></li>
+              </ul>
+              <p class="copyright" style="color:black;">
+                Grupo 8 APLICACION DE TECNOLOGIAS WEB
+              </p>    
+              <div class="actions">
+                    <h2 style="color:black;"> <b>ESTUDIANTE</b> </h2>
+                    <p style="color:black;"> EUNICE COYAGO </p>        
+             </div>     
+            </div> <!-- End col-sm-8 -->
+          </div> <!-- End row -->
+        </div> <!-- End container -->
+      </div> <!-- End footer-section  -->
+    </footer>
+    <!-- End footer -->
+
+  </div> <!-- End wrapper -->
+
+  
+
+  <!-- Back-to-top ================================================== -->
+  <div class="back-to-top">
+    <i class="fa fa-angle-up fa-3x"></i>
+  </div> <!-- end back-to-top -->
+
+  <!-- JS libraries and scripts -->
+  <script src="../js/jquery-1.11.3.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap-hover-dropdown.min.js"></script>
+  <script src="../js/jquery.appear.min.js"></script>
+  <script src="../js/jquery.bxslider.min.js"></script>
+  <script src="../js/jquery.owl.carousel.min.js"></script>
+  <script src="../js/jquery.countTo.js"></script>
+  <script src="../js/jquery.easing.1.3.js"></script>
+  <script src="../js/jquery.imgloaded.min.js"></script>
+  <script src="../js/jquery.isotope.js"></script>
+  <script src="../js/jquery.placeholder.js"></script>
+  <script src="../js/jquery.smoothscroll.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.waypoints.js"></script>
+  <script src="../js/jquery.fitvids.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/jquery.ajaxchimp.min.js"></script>
+  <script src="../js/jquery.countdown.js"></script>
+  <script src="ets/js/jquery.navbar-scroll.js"></script>
+  <script src="ht../tp://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="../js/jquery.gmaps.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
+   
